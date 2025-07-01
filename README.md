@@ -27,5 +27,3 @@
     - Crea un array de frases. Cada vez que se hace clic en un botón, se muestra una nueva al azar.
 5. **Mini Juego Piedra, Papel o Tijera**
     - El usuario elige una opción y compite contra la máquina. Muestra quién gana cada ronda.
-
-## 
