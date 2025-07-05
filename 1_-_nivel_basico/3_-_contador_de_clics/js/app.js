@@ -21,7 +21,6 @@ buttonCount.addEventListener('click', () => {
   numCount.innerHTML = contador;
 });
 
-
 const message = 'Contador de clics'; // Try edit me
 
 // Update header text
