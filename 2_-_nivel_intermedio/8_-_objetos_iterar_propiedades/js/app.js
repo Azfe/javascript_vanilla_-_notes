@@ -41,20 +41,89 @@ const config = {
     }
 }
 
-// for ( const key in config){
-//     console.log(`${key}: ${config[key]}`);
-// }
+// Iterar propiedades
 
-for ( const key in config){
-    if(key === 'api'){
-        for ( const apiKey in config[key]){
-            if(apiKey === 'endpoints'){
+for (const key in config) {       
+
+    if(key === 'appName'){
+        console.log(`${key}: ${config[key]}`);
+    }
+
+    if(key === 'version'){
+        console.log(`${key}: ${config[key]}`);
+    }
+
+    if(key === 'production'){
+        console.log(`${key}: ${config[key]}`);
+    }
+
+    if (key === 'api') {
+        console.log("=============");
+        console.log('Key: ', key);
+
+        for (const apiKey in config[key]) {
+            if (apiKey === 'baseUrl') {
+                console.log(apiKey, ': ', config[key].baseUrl);
+            }
+
+            if (apiKey === 'endpoints') {
                 console.log('Users endpoint:', config[key][apiKey].users);
                 console.log('Products endpoint:', config[key][apiKey].products);
-                
+            }
+            if (apiKey === 'timeout'){
+                console.log(apiKey, ': ', config[key].timeout);
             }
         }
     }
 
-    console.log(`${key}: ${config[key]}`);
+    if (key === 'theme') {
+        console.log("=============");
+        console.log('Key: ', key);
+
+        for (const themeKey in config[key]) {
+            if (themeKey === 'primaryColor') {
+                console.log(themeKey, ': ', config[key].primaryColor);
+            }
+            if (themeKey === 'darkMode'){
+                console.log(themeKey, ': ', config[key].darkMode);
+            }
+            if (themeKey === 'fontSize'){
+                console.log(themeKey, ': ', config[key].fontSize);
+            }                       
+        }
+    }
+
+    if (key === 'features') {
+        console.log("=============");
+        console.log('Key: ', key);
+
+        for (const featKey in config[key]) {
+            if (featKey === 'analytics'){
+                console.log(featKey, ': ', config[key].analytics);
+            }
+             if (featKey === 'notifications'){
+                console.log(featKey, ': ', config[key].notifications);
+            }
+             if (featKey === 'experimental'){                
+                for(const index in config[key].experimental){                    
+                    indexInt = parseInt(index)                    
+                    console.log(indexInt + 1,': ', featKey, ': ', config[key].experimental[index]);
+                }
+            }            
+        }
+    }
+
+    if (key === 'credentials') {
+        console.log("=============");
+        console.log('Key: ', key);
+
+        for (const credKey in config[key]){
+            if(credKey === 'apiKey'){
+                console.log(credKey, ': ', config[key].apiKey);
+            }
+            if(credKey === 'secret'){
+                console.log(credKey, ': ', config[key].secret);
+            }
+        }
+    }    
 }
